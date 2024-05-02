@@ -4,6 +4,7 @@ const { stdout } = require("process");
 const { error } = require("console");
 const fs = require("fs");
 const myConsole = new console.Console(fs.createWriteStream("./logs.txt"));
+require('dotenv').config()
 
 async function SendMessageWhatsApp(data) {
 
@@ -13,7 +14,7 @@ async function SendMessageWhatsApp(data) {
             body: JSON.stringify(data),
             headers: {
                 "Content-type": "application/json",
-                Authorization: "Bearer EAAFthF7xDrgBO4cHJ4Sv1SMaWqStQxBS8nKMCv2L2T8nF0UCZAQZBklSKtahzzz3ZAIpvo2ESGxsudTb1xQP0ALKfYbMl4nlmrGBcvEq4NU6komgzNUqZCRvu4ZA8BmCoKHMI2evNjXqTtDWt6YCZCWHuILEDU1n6iVjslDsCXBOgE43b87gZCyRDNcd5gNi9qp"
+                Authorization: `Bearer ${process.env.TOKEN}`
             }
         };
 
@@ -23,7 +24,7 @@ async function SendMessageWhatsApp(data) {
         return res;
 
     } catch (e) {
-        console.log(e);
+        // console.log(e);
     }
 
 }
