@@ -24,11 +24,17 @@ app.use(bodyParser.json());
 app.use(cors())
 
 // Directorio public nombrado como resources
-app.use(express.static(path.join(__dirname, 'public')));
+// Directorio public nombrado como resources
+app.use('/resources', express.static('public'));
+app.use('/resources', express.static(__dirname+'/public'));
 
 // Motor de plantilla 
 app.set('view engine', 'ejs');
 
+
+app.get('/', (req, res) => {
+  res.render('index.ejs')
+})
 // Servir las imágenes estáticas
 app.use('/api/v1/static/img', express.static(path.join(__dirname, '..', 'public', 'imgs')));
 // Middleware para manejar archivos no encontrados

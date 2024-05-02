@@ -1,16 +1,13 @@
 function MessageVideo(number, url, nombre) {
-    const data = JSON.stringify({
+    const data = {
         "messaging_product": "whatsapp",
-        "recipient_type": "individual",
         "to": number,
         "type": "video",
         "video": {
-            "body": {
-                "text": `de parte de ${nombre}`
-            },            
-            "link": url
-        },
-    });
+            "link": url,
+            "caption": `De parte de ${nombre}`
+        }
+    };
 
     return data;
 }

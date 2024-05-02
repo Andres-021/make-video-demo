@@ -9,28 +9,22 @@ async function SendMessageWhatsApp(data) {
 
     try {
         const options = {
-            host: "graph.facebook.com",
-            path: "/v18.0/262891140247267/messages",
             method: "POST",
-            body: data,
+            body: JSON.stringify(data),
             headers: {
                 "Content-type": "application/json",
-                Authorization: "Bearer EAAFZCtPRcfr4BO1DlMhtFkjbTgtlEcRpReymgXpQ9FmjxAGvzT1yac0nI0fz2ayBUXQRg1bhlsZAINW2jVGiIreXNFeQQ02MXuuYSzLwZC1IZCW5V4dZC514ZAWywZB4tMVzeteQnYr5YiiZCEIbjXXw44m9RlqDgtefCXsgrkFkgad8F6UXeoZBuYz8M66yF0YE9"
+                Authorization: "Bearer EAAFthF7xDrgBO4cHJ4Sv1SMaWqStQxBS8nKMCv2L2T8nF0UCZAQZBklSKtahzzz3ZAIpvo2ESGxsudTb1xQP0ALKfYbMl4nlmrGBcvEq4NU6komgzNUqZCRvu4ZA8BmCoKHMI2evNjXqTtDWt6YCZCWHuILEDU1n6iVjslDsCXBOgE43b87gZCyRDNcd5gNi9qp"
             }
         };
 
-        const req = await fetch(options);
-        console.log(req);
-        return req;
+        const req = await fetch('https://graph.facebook.com/v18.0/262891140247267/messages',options);
+        const res = await req.json()
+        
+        return res;
 
     } catch (e) {
-        myConsole.log(e);
+        console.log(e);
     }
-    // const req = https.request(options, res => {
-    //     res.on("data", d=>{
-    //         process.stdout.write(d);
-    //     });
-    // });
 
 }
 

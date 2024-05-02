@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             errores.push("Por favor, ingresa el nombre del destinatario.");
         }
 
-        const celularRegex = /^[0-9]{10}$/;
+        const celularRegex = /^[0-9]{12}$/;
         if (!celularRegex.test(celular.value.trim())) {
             errores.push("El número de teléfono debe contener 10 dígitos numéricos.");
         }

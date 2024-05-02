@@ -2,7 +2,7 @@
 //meto par recibir los mensajes que llegan a partir de whatsapp
 const fs = require("fs");
 const myConsole = new console.Console(fs.createWriteStream("./logs.txt"));
-const processMessage = require("../utils/processMessage");
+// const processMessage = require("../utils/processMessage");
 //const whatsappService = require("../services/whatsappServices");
 //const samples = require("../shared/sampleModels");
 

@@ -15,7 +15,7 @@
     font-family: "Bodoni Moda", serif;
 }
 section {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./fondo-section3.jpg");
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../assets/fondo-section3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -197,7 +197,7 @@ section {
 /* Ventana Mensaje y video creado*/
 
 .VentanaMensaje {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

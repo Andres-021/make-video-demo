@@ -8,12 +8,12 @@ const whatsappService = require("../api/whatsappServices");
 const {gemini} = require('../api/gemini')
 
 const { ejecutarFFmpeg, dividirTexto, calcularTiempoLectura, sanitizeParams, verificarExistenciaImagen, eliminarArchivo } = require('../utils/utils');
+const { off } = require('process');
 
 const generateVideo = async (req, res) => {
   try{
     const body = req.body;
     const { imagen, numero, mensaje } = sanitizeParams(body)
-    console.log(mensaje)
 
     if(!imagen){
       return res.status(400).json({message: 'Debe seleccionar una imagen'})
@@ -112,12 +112,21 @@ const generateVideo = async (req, res) => {
     const parts = filePath.split("\\");
     const nameFile = parts[parts.length - 1];
 
-    const models = whatsappModels.MessageVideo(numero,"http://localhost:4000/api/v1/static/video/${nameFile}", "juan")
+    const models = whatsappModels.MessageVideo(numero,`https://ssdc2b55-4000.use2.devtunnels.ms/api/v1/static/video/${nameFile}`, "juan")
     const modelService = await whatsappService.SendMessageWhatsApp(models);
 
-    res.status(202).json({
-      message: 'Video creado correctamente',
-      url: `http://localhost:4000/api/v1/static/video/${nameFile}`
+    
+    if(modelService.hasOwnProperty('error')){
+      return res.status(500).json({
+        message: modelService.error.message
+      })
+    }
+
+    // console.log(modelService)
+
+    return res.status(202).json({
+      message: 'Video enviado',
+      url: `https://ssdc2b55-4000.use2.devtunnels.ms/api/v1/static/video/${nameFile}`
     })
     
   }catch(e){
