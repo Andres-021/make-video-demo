@@ -6,9 +6,17 @@ const path = require('path');
 
 const videoRouter = require('./router/videoRouter')
 const imgRouter = require('./router/imgRouter')
+//const express = require("express");
+const apiRoute = require("./router/Routes");
+
 
 const app = express();
-const port = 4000;
+const port = process.env.port || 4000;
+
+app.use(express.json());
+
+//ruta de la api para el controlador
+app.use("/whatsapp", apiRoute);
 
 // Codificando datos de entrada
 app.use(bodyParser.urlencoded({ extended: false }));

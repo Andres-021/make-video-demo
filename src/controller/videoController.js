@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const whatsappModels = require("../models/whatsappmodels");
+const whatsappService = require("../api/whatsappServices");
+
 
 const {gemini} = require('../api/gemini')
 
@@ -108,6 +111,9 @@ const generateVideo = async (req, res) => {
     // res.sendFile(filePath); // Enviar el video final al cliente
     const parts = filePath.split("\\");
     const nameFile = parts[parts.length - 1];
+
+    const models = whatsappModels.MessageVideo(numero,"http://localhost:4000/api/v1/static/video/${nameFile}", "juan")
+    const modelService = await whatsappService.SendMessageWhatsApp(models);
 
     res.status(202).json({
       message: 'Video creado correctamente',
