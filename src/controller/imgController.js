@@ -15,7 +15,7 @@ const getImgs = (req, res) => {
     const imgsArr = files.map(file =>{
       // Extension de las imágenes aceptadas y que solo serán reenviadas
       if(file.endsWith('.jpg') || file.endsWith('.jpeg') || file.endsWith('.png')){
-        return {url: `https://videoangelicaldemo.vercel.app/api/v1/static/img/${file}`}
+        return {url: `https://videoangelicaldemo.onrender.com/api/v1/static/img/${file}`}
       }
     });
 

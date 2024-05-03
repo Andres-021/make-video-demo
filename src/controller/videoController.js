@@ -122,7 +122,7 @@ const generateVideo = async (req, res) => {
     const parts = filePath.split("\\");
     const nameFile = parts[parts.length - 1];
 
-    const models = whatsappModels.MessageVideo(numero,`https://videoangelicaldemo.vercel.app/api/v1/static/video/${nameFile}`, de, para)
+    const models = whatsappModels.MessageVideo(numero,`https://videoangelicaldemo.onrender.com/api/v1/static/video/${nameFile}`, de, para)
     const modelService = await whatsappService.SendMessageWhatsApp(models);
 
     
@@ -134,13 +134,13 @@ const generateVideo = async (req, res) => {
 
     setTimeout(() => {
       eliminarArchivo(filePath)
-    },10000)
+    },30000)
 
     // console.log(modelService)
 
     return res.status(202).json({
       message: 'Video enviado',
-      url: `https://videoangelicaldemo.vercel.app/api/v1/static/video/${nameFile}`
+      url: `https://videoangelicaldemo.onrender.com/api/v1/static/video/${nameFile}`
     })
     
   }catch(e){
