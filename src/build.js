@@ -9,7 +9,7 @@ const outputDir = path.join(__dirname, '..', 'public', 'html'); // Directorio de
 fs.readdir(inputDir, (err, files) => {
   if (err) {
     console.error('Error al leer el directorio de entrada:', err);
-    return;
+    return
   }
 
   // Itera sobre cada archivo
