@@ -3,31 +3,31 @@
   "builds": [
     {
       "src": "public/assets/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     },
     {
       "src": "public/audio/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     },
     {
       "src": "public/css/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     },
     {
       "src": "public/fonts/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     },
     {
       "src": "public/imgs/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     },
     {
       "src": "public/scripts/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     },
     {
       "src": "public/upload/**",
-      "use": "@vercel/static"
+      "use": "@vercel/node"
     }
   ]
 }
