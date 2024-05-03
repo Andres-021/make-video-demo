@@ -4,10 +4,6 @@
     {
       "src": "public/imgs/**",
       "use": "@vercel/static"
-    },
-    {
-      "src": "public/upload/**",
-      "use": "@vercel/static"
     }
   ]
 }
