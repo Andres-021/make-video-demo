@@ -40,7 +40,7 @@ const generateVideo = async (req, res) => {
       
     }
   
-    const img = path.join(__dirname, '..', '..', 'public', 'imgs', imagen)
+    const img = path.join(__dirname, '..', '..', 'public', 'assets', imagen)
     const imgValid = await verificarExistenciaImagen(img)
 
     if(!imgValid){
