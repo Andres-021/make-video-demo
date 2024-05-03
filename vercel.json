@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/audio/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/css/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/fonts/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/imgs/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/scripts/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/upload/**",
+      "use": "@vercel/static"
+    }
+  ]
+}

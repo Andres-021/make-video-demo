@@ -36,13 +36,13 @@ app.get('/', (req, res) => {
   res.render('index.ejs')
 })
 // Servir las imágenes estáticas
-app.use('/api/v1/static/img', express.static(path.join(__dirname, 'public', 'imgs')));
+app.use('/api/v1/static/img', express.static(path.join(__dirname, '..', 'public', 'imgs')));
 // Middleware para manejar archivos no encontrados
 app.use('/api/v1/static/img', (req, res) => {
   res.status(404).json({message: 'Imagen no encontrada o extension incorrecta'});
 });
 // Servir las videos estáticas
-app.use('/api/v1/static/video', express.static(path.join(__dirname, 'public', 'upload')));
+app.use('/api/v1/static/video', express.static(path.join(__dirname, '..', 'public', 'upload')));
 // Middleware para manejar archivos no encontrados
 app.use('/api/v1/static/video', (req, res) => {
   res.status(404).json({message: 'Video no encontrado o extension incorrecta'});

@@ -13,7 +13,17 @@ const { off } = require('process');
 const generateVideo = async (req, res) => {
   try{
     const body = req.body;
-    const { imagen, numero, mensaje } = sanitizeParams(body)
+    const {de, para, imagen, numero, mensaje } = sanitizeParams(body)
+
+    if(!de){
+      return res.status(400).json({message: 'Debe el nombre de la persona que envía'})
+      
+    }
+
+    if(!para){
+      return res.status(400).json({message: 'Debe el nombre de la persona que recibe'})
+      
+    }
 
     if(!imagen){
       return res.status(400).json({message: 'Debe seleccionar una imagen'})
@@ -112,7 +122,7 @@ const generateVideo = async (req, res) => {
     const parts = filePath.split("\\");
     const nameFile = parts[parts.length - 1];
 
-    const models = whatsappModels.MessageVideo(numero,`https://videoangelicaldemo.vercel.app/api/v1/static/video/${nameFile}`, "juan")
+    const models = whatsappModels.MessageVideo(numero,`https://videoangelicaldemo.vercel.app/api/v1/static/video/${nameFile}`, de, para)
     const modelService = await whatsappService.SendMessageWhatsApp(models);
 
     
