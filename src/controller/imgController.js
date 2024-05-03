@@ -3,7 +3,7 @@ const path = require('path');
 
 const getImgs = (req, res) => {
   // Obtenemos la url donde se encuentran almacenadas las imágenes
-  const imgs = path.join(__dirname, '..','..', 'public', 'assets')
+  const imgs = path.join(__dirname, '..','..', 'public', 'imgs')
   // Leer el contenido del directorio
   fs.readdir(imgs, (err, files) => {
     if (err) {
