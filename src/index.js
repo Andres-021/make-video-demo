@@ -8,10 +8,11 @@ const videoRouter = require('./router/videoRouter')
 const imgRouter = require('./router/imgRouter')
 //const express = require("express");
 const apiRoute = require("./router/Routes");
+const logError = require('./utils/errors');
 
 
 const app = express();
-const port = process.env.port || 4000;
+const port = 4000;
 
 app.use(express.json());
 
@@ -50,7 +51,9 @@ app.use('/api/v1/static/video', (req, res) => {
 
 
 app.use('/api/v1', videoRouter)
-app.use('/api/v1', imgRouter)
+app.use('/api/v1',[
+  logError
+], imgRouter)
 
 app.listen(port, () => {
   console.log(`Server running in port${port}`)
