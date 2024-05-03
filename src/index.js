@@ -26,7 +26,7 @@ app.use(cors())
 // Directorio public nombrado como resources
 // Directorio public nombrado como resources
 app.use('/public', express.static('public'));
-app.use('/public', express.static(__dirname+'/public'));
+// app.use('/public', express.static(__dirname+'/public'));
 
 // Motor de plantilla 
 app.set('view engine', 'ejs');
@@ -47,6 +47,8 @@ app.use('/api/v1/static/video', express.static(path.join(__dirname, '..', 'publi
 app.use('/api/v1/static/video', (req, res) => {
   res.status(404).json({message: 'Video no encontrado o extension incorrecta'});
 });
+
+
 app.use('/api/v1', videoRouter)
 app.use('/api/v1', imgRouter)
 
