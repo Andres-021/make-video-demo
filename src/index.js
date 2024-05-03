@@ -14,7 +14,7 @@ const logError = require('./utils/errors');
 const app = express();
 const port = 4000;
 
-app.use(express.json());
+// app.use(express.json());
 
 //ruta de la api para el controlador
 // app.use("/whatsapp", apiRoute);
@@ -30,11 +30,11 @@ app.use('/public', express.static('public'));
 // app.use('/public', express.static(__dirname+'/public'));
 
 // Motor de plantilla 
-app.set('view engine', 'ejs');
-
+// app.set('view engine', 'ejs');
+// 
 
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+  res.send('hola')
 })
 // Servir las imágenes estáticas
 app.use('/api/v1/static/img', express.static(path.join(__dirname, '..', 'public', 'imgs')));
