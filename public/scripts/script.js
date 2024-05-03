@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // url de imagenes de gatos https://api.thecatapi.com/v1/images/search
 
-const URL = "https://ssdc2b55-4000.use2.devtunnels.ms/api/v1/imgs";
+const URL = "https://videoangelicaldemo.vercel.app/api/v1/imgs";
 fetch(URL)
     .then((res) => res.json())
     .then((data) => {
@@ -124,7 +124,7 @@ btnConfirmar.addEventListener("click", () => {
         mensaje: mensajeListo,
     };
 
-    const URL_BACK = "https://ssdc2b55-4000.use2.devtunnels.ms/api/v1/generate";
+    const URL_BACK = "https://videoangelicaldemo.vercel.app/api/v1/generate";
 
     const opciones = {
         method: "POST",
