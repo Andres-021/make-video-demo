@@ -156,12 +156,12 @@ btnConfirmar.addEventListener("click", () => {
         });
 });
 
-fetch("direccion para pedir el video creado")
-    .then((res) => res.json())
-    .then((data) => {
-        const video = document.querySelector("#videoCreado");
-        video.src = data.url;
-    });
+// fetch("direccion para pedir el video creado")
+//     .then((res) => res.json())
+//     .then((data) => {
+//         const video = document.querySelector("#videoCreado");
+//         video.src = data.url;
+//     });
 
 const cerrarMensaje = document.querySelector(".cerrar");
 cerrarMensaje.addEventListener("click", () => {
