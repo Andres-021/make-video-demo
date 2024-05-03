@@ -2,32 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "public/assets/**",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/audio/**",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/css/**",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/fonts/**",
-      "use": "@vercel/node"
-    },
-    {
       "src": "public/imgs/**",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/scripts/**",
-      "use": "@vercel/node"
+      "use": "@vercel/static"
     },
     {
       "src": "public/upload/**",
-      "use": "@vercel/node"
+      "use": "@vercel/static"
     }
   ]
 }
