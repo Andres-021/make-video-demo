@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const inputDir = path.join(__dirname, '..', 'views'); // Directorio de entrada con archivos EJS
-const outputDir = path.join(__dirname, '..', 'public', 'html'); // Directorio de salida para archivos HTML
+const outputDir = path.join(__dirname, '..', 'public'); // Directorio de salida para archivos HTML
 
 // Lee todos los archivos en el directorio de entrada
 fs.readdir(inputDir, (err, files) => {
