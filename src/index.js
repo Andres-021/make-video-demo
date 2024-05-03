@@ -51,7 +51,7 @@ app.use('/api/v1/static/video', (req, res) => {
 
 
 app.use('/api/v1', videoRouter)
-app.use([
+app.use('/api/v1',[
   logError
 ], imgRouter)
 
